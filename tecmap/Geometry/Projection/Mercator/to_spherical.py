@@ -20,8 +20,3 @@ def to_spherical(origin):
 
   else:
     return None
-
-# r.yaw = o.yaw
-# r.pitch
-# tan(r.pitch) = o.height/o.radius
-# r.pitch = atan()
