@@ -12,10 +12,11 @@ class Point:
       else:
         r_yaw = 0.0
 
-      if fabs(fmod(r_yaw, 2*pi)) == pi:
-        self.__yaw = pi
-      else:
-        self.__yaw = fmod(r_yaw, pi)
+      while r_yaw < 0:
+        r_yaw += 2*pi
+
+      self.__yaw = fmod(r_yaw, 2*pi)
+
     except:
       self.__yaw = 0.0
     
