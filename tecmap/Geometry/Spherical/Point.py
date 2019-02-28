@@ -10,7 +10,13 @@ class Point:
         r_yaw = float(yaw)
       else:
         r_yaw = 0.0
-      self.__yaw = fmod(r_yaw, pi)
+      
+      if fmod(r_yaw, 2*pi) == pi:
+        self.__yaw = pi
+      elif fmod(r_yaw, 2*pi) == -pi:
+        self.__yaw = -pi
+      else:
+        self.__yaw = fmod(r_yaw, pi)
     except:
       self.__yaw = 0
     
@@ -21,7 +27,13 @@ class Point:
         r_pitch = float(pitch)
       else:
         r_pitch = 0.0
-      self.__pitch = fmod(r_pitch, pi / 2)
+
+      if fmod(r_pitch, 2*pi) == pi:
+        self.__pitch = pi
+      elif fmod(r_pitch, 2*pi) == -pi:
+        self.__yaw = -pi
+      else:
+        self.__pitch = fmod(r_pitch, pi / 2)
     except:
       self.__pitch = 0
     

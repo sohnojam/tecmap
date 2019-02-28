@@ -11,7 +11,13 @@ class Point:
         r_yaw = float(yaw)
       else:
         r_yaw = 0.0
-      self.__yaw = fmod(r_yaw, pi)
+
+      if fmod(r_yaw, 2*pi) == pi:
+        self.__yaw = pi
+      elif fmod(r_yaw, 2*pi) == -pi:
+        self.__yaw = -pi
+      else:
+        self.__yaw = fmod(r_yaw, pi)
     except:
       self.__yaw = 0.0
     
