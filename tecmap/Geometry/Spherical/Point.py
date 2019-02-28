@@ -28,10 +28,10 @@ class Point:
       else:
         r_pitch = 0.0
 
-      if fmod(r_pitch, 2*pi) == pi:
-        self.__pitch = pi
-      elif fmod(r_pitch, 2*pi) == -pi:
-        self.__yaw = -pi
+      if fmod(r_pitch, pi) == pi/2:
+        self.__pitch = pi/2
+      elif fmod(r_pitch, pi) == -pi/2:
+        self.__yaw = -pi/2
       else:
         self.__pitch = fmod(r_pitch, pi / 2)
     except:
