@@ -11,10 +11,8 @@ class Point:
       else:
         r_yaw = 0.0
       
-      if fmod(r_yaw, 2*pi) == pi:
+      if fabs(fmod(r_yaw, 2*pi)) == pi:
         self.__yaw = pi
-      elif fmod(r_yaw, 2*pi) == -pi:
-        self.__yaw = -pi
       else:
         self.__yaw = fmod(r_yaw, pi)
     except:
@@ -31,7 +29,7 @@ class Point:
       if fmod(r_pitch, pi) == pi/2:
         self.__pitch = pi/2
       elif fmod(r_pitch, pi) == -pi/2:
-        self.__yaw = -pi/2
+        self.__pitch = -pi/2
       else:
         self.__pitch = fmod(r_pitch, pi / 2)
     except:
