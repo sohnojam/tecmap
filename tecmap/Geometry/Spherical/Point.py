@@ -1,7 +1,7 @@
 from math import fmod, fabs, pi
 class Point:
 
-  def __init__(self, yaw, pitch, radius, unit='deg'):
+  def __init__(self, yaw, pitch, radius=0, unit='deg'):
 
     try:
       if unit == 'deg':
